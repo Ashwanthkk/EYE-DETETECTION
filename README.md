@@ -47,9 +47,9 @@ Predicted: ≈0.7, 2.0
 
 * The dataset is available from [dataset link](https://mmlab.ie.cuhk.edu.hk/projects/TCDCN.html).
 
-* Trained weights is provided in this repo (not recommended)
+* Trained weights is not provided in this repo you can train them using train.py.
 
-Once finished, you can easily test the model using your own inference script.
+Once finished, you can easily test the model using predict.py
 
 ---
 
