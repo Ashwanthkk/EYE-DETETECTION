@@ -17,10 +17,9 @@ def predict_eye(image, weight):
     model.load_state_dict(torch.load(weight, map_location="cpu"))
     model.eval()
 
-    # Fix starts here 👇
-    if isinstance(image, np.ndarray):
-        image = Image.fromarray(image)  # Convert np array to PIL Image
 
+    if isinstance(image, np.ndarray):
+        image = Image.fromarray(image) 
     image = image.convert("RGB")
     image_tensor = transform(image).unsqueeze(0).to(device)
 
@@ -41,5 +40,5 @@ def output():
 
     right_eye=result[2]
     eye_center = (int(right_eye[0]+7), int(right_eye[1]))
-    cv.ellipse(image_cv,center=eye_center, axes=(20, 10),angle=0, startAngle=0,endAngle=360, color=(255, 0, 0),thickness=2 )  # Blue
+    cv.ellipse(image_cv,center=eye_center, axes=(20, 10),angle=0, startAngle=0,endAngle=360, color=(255, 0, 0),thickness=2 ) 
     cv.imshow(image_cv)
